@@ -49,7 +49,7 @@ class Checkbox(BaseElement):
         return f'[{"*" if self.checked else " "}] {self.text}'
 
 
-class ProgressBar(BaseElement):
+class Slider(BaseElement):
     def __init__(self):
         super().__init__()
         self.focus = True
@@ -67,6 +67,18 @@ class ProgressBar(BaseElement):
         string += f' {self.value * 10}/100 %' if self.percents else ''
         return string
 
+class ProgressBar(BaseElement):
+    def __init__(self):
+        super().__init__()
+        self.focus = True
+        self.value: int = 0
+        self.percents: bool = True
+
+    def __str__(self):
+        string = f'[{"#" * self.value + " " * (10 - self.value)}]'
+        string += f' {self.value * 10}/100 %' if self.percents else ''
+        return string
+
 
 class Splitter(BaseElement):
     def __init__(self):
@@ -78,9 +90,9 @@ class Splitter(BaseElement):
 
 
 class Label(BaseElement):
-    def __init__(self):
+    def __init__(self, text: str = 'Label'):
         super().__init__()
-        self.text = 'Label'
+        self.text = text
 
     def __str__(self):
         return self.text
@@ -168,3 +180,4 @@ class Tui:
     def end():
         for tui in tuis:
             tui.close()
+

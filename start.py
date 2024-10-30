@@ -1,4 +1,4 @@
-from game.main import menu_main, load
+import game
 
-load()
-menu_main.show()
+game.init()
+game.start()

@@ -4,5 +4,7 @@
   "btn_equipment": "Equipment",
   "btn_inventory": "Inventory",
   "btn_settings": "Settings",
-  "btn_exit": "Exit"
+  "btn_exit": "Exit",
+  "inventory": "Inventory of player: ",
+  "back": "Back"
 }

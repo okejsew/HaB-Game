@@ -4,5 +4,7 @@
   "btn_equipment": "Снаряжение",
   "btn_inventory": "Инвентарь",
   "btn_settings": "Настройки",
-  "btn_exit": "Выход"
+  "btn_exit": "Выход",
+  "inventory": "Инвентарь игрока: ",
+  "back": "Назад"
 }
