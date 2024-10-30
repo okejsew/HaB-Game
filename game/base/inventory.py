@@ -1,6 +1,6 @@
 from typing import TYPE_CHECKING, Optional
 
-from game.base.baseitem import BaseItem
+from game.base.item import BaseItem
 from game.utils.localization import Locale
 from game.utils.tui import Tui, Label, Button
 

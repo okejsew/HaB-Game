@@ -1,6 +1,6 @@
 from typing import Optional, TYPE_CHECKING
 
-from game.base.baseitem import Weapon, Armor
+from game.base.item import Weapon, Armor
 
 if TYPE_CHECKING:
     from game.base.player import Player
