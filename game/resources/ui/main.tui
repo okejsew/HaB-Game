@@ -1,0 +1,28 @@
+Label:
+    text = 'HaB Game Beta (v1.0.0)'
+
+Button:
+    name = 'btn_play'
+    text = '@btn_play'
+
+Button:
+    name = 'btn_profile'
+    text = '@btn_profile'
+
+Button:
+    name = 'btn_equipment'
+    text = '@btn_equipment'
+
+Button:
+    name = 'btn_inventory'
+    text = '@btn_inventory'
+
+Button:
+    name = 'btn_settings'
+    text = '@btn_settings'
+
+Splitter:
+
+Button:
+    name = 'btn_exit'
+    text = '@btn_exit'
