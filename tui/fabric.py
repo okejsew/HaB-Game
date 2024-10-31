@@ -1,9 +1,10 @@
-import re
-import os
 import importlib.util
+import os
+import re
 import sys
-from tui import Tui, BaseElement
+
 from game.localization import Locale
+from tui import Tui, BaseElement
 
 
 class TuiFabric:
