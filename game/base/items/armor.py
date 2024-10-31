@@ -1,7 +1,9 @@
+from enum import Enum
+
 from game.base.item import BaseItem
 
 
-class ArmorType:
+class ArmorType(Enum):
     head = 1
     hands = 3
     chest = 2
@@ -12,7 +14,7 @@ class ArmorType:
 class Armor(BaseItem):
     def __init__(self):
         super().__init__()
-        self.type = ArmorType.head
+        self.type: ArmorType = ArmorType.head
         self.durability: int = 0
         self.max_durability: int = 100
         self.protect_factor: int = 10

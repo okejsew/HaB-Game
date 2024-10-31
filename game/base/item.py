@@ -1,4 +1,7 @@
-class Rarity:
+from enum import Enum
+
+
+class Rarity(Enum):
     Common = 1
     Uncommon = 2
     Rare = 3
@@ -11,4 +14,4 @@ class Rarity:
 class BaseItem:
     def __init__(self):
         self.name: str = 'BaseItem'
-        self.rarity: int = Rarity.Common
+        self.rarity: Rarity = Rarity.Common
