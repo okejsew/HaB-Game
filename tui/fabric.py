@@ -13,21 +13,16 @@ class TuiFabric:
     def load_element_classes():
         elements_dir = os.path.join(os.path.dirname(__file__), 'elements')
 
-        # Добавляем директорию элементов в sys.path
-        sys.path.append(elements_dir)
-
         for filename in os.listdir(elements_dir):
             if filename.endswith('.py') and filename != '__init__.py':
                 module_name = filename[:-3]
                 module_path = os.path.join(elements_dir, filename)
 
-                # Загружаем модуль из пути
                 spec = importlib.util.spec_from_file_location(module_name, module_path)
                 module = importlib.util.module_from_spec(spec)
                 sys.modules[module_name] = module
                 spec.loader.exec_module(module)
 
-                # Добавляем классы элементов
                 for attr_name in dir(module):
                     attr = getattr(module, attr_name)
                     if isinstance(attr, type) and issubclass(attr, BaseElement) and attr is not BaseElement:

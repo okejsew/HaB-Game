@@ -1,4 +1,4 @@
-from game.base.entity.health import Health
+from game.entity.health import Health
 from game.base.item import BaseItem
 
 

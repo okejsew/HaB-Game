@@ -1,7 +1,6 @@
 import curses
-from webbrowser import Galeon
 
-from game.base.player import Player
+from game.base.entities.player import Player
 from game.localization import Locale
 from tui import Tui
 from tui.elements.button import Button
