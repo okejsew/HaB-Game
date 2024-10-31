@@ -1,4 +1,4 @@
-import game
+from game import HaB
 
-game.init()
-game.start()
+HaB.init()
+HaB.start()

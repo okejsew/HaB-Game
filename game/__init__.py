@@ -1,11 +1,23 @@
 import curses
+from webbrowser import Galeon
 
 from game.base.player import Player
-from game.utils.localization import Locale
-from game.utils.tui import Tui, Button
+from game.localization import Locale
+from tui import Tui
+from tui.elements.button import Button
+from tui.fabric import TuiFabric
 
 
-class Game:
+class Menu:
+    main: Tui
+
+    @staticmethod
+    def setup():
+        Menu.main = TuiFabric.load('game/resources/ui/main.tui')
+        Menu.main.get('btn_exit', Button).click = HaB.exit
+
+
+class HaB:
     player: Player = Player()
 
     @staticmethod
@@ -14,21 +26,11 @@ class Game:
         Tui.end()
         exit()
 
-
-class Interface:
-    main: Tui = Tui()
+    @staticmethod
+    def init():
+        Locale.load('ru')
+        Menu.setup()
 
     @staticmethod
-    def setup():
-        Interface.main.load('game/resources/ui/main.tui')
-        Interface.main.get('btn_exit', Button).click = Game.exit
-        Interface.main.get('btn_inventory', Button).click = Game.player.inventory.open
-
-
-def init():
-    Locale.load('ru')
-    Interface.setup()
-
-
-def start():
-    Interface.main.show()
+    def start():
+        Menu.main.show()

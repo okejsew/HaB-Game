@@ -1,6 +1,8 @@
 Label:
     text = 'HaB Game Beta (v1.0.0)'
 
+Splitter:
+
 Button:
     name = 'btn_play'
     text = '@btn_play'

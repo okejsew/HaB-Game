@@ -6,7 +6,7 @@ class Locale:
 
     @staticmethod
     def load(lang: str):
-        with open(f'game/resources/locales/{lang}.json', 'r', encoding='utf-8') as file:
+        with open(f'game/localization/locales/{lang}.json', 'r', encoding='utf-8') as file:
             Locale.current_locale = json.load(file)
 
     @staticmethod

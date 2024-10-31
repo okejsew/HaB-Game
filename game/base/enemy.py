@@ -1,7 +1,7 @@
 from game.base.entity import BaseEntity
 
 
-class Player(BaseEntity):
+class Enemy(BaseEntity):
     def __init__(self):
         super().__init__()
-        self.name: str = 'Player'
+        self.name: str = 'Enemy'
