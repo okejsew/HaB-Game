@@ -13,5 +13,5 @@ class Locale:
     def get(code: str):
         try:
             return Locale.current_locale[code]
-        except ValueError:
-            return 'Locale Not Loaded'
+        except KeyError:
+            return 'Locale Not Found'

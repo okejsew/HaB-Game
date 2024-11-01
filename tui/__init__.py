@@ -1,4 +1,4 @@
-from typing import TypeVar, Type, Optional
+from typing import TypeVar, Type, Optional, Callable
 
 from tui.console import window, color
 from tui.element import BaseElement
@@ -20,9 +20,9 @@ class Tui:
     def close(self):
         self.showing = False
 
-    def next(self, tui: 'Tui'):
+    def next(self, tui: Callable):
         self.close()
-        tui.show()
+        tui()
 
     def get(self, name: str, t: Type[T]) -> Optional[T]:
         for element in self.elements:
