@@ -19,6 +19,7 @@ class Tui:
 
     def close(self):
         self.showing = False
+        self.index = 0
 
     def next(self, tui: Callable):
         self.close()

@@ -1,5 +1,5 @@
-from game.localization import Locale
 from game.base.item import BaseItem, ItemContextMenu
+from game.localization import Locale
 from tui.elements.button import Button
 
 

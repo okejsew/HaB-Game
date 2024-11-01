@@ -21,6 +21,9 @@ class Button(BaseElement):
     def on_click(self):
         if self.click: self.click()
 
+    def info(self):
+        return f'{self.click}'
+
     def __str__(self):
         match self.style:
             case ButtonStyle.Square:
