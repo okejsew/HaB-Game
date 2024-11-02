@@ -1,14 +1,7 @@
 from enum import Enum
 
-from game.base.item import BaseItem, ItemContextMenu
-from game.localization import Locale
-from tui.elements.button import Button
-
-
-class ArmorContextMenu(ItemContextMenu):
-    def __init__(self, item: 'Armor'):
-        super().__init__(item)
-        self.add(Button(Locale.get("equip"), item.equip))
+from game.base.item import BaseItem
+from game.items.armor.menu import ArmorContextMenu
 
 
 class ArmorType(Enum):

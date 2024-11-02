@@ -1,12 +1,5 @@
-from game.base.item import BaseItem, ItemContextMenu
-from game.localization import Locale
-from tui.elements.button import Button
-
-
-class UsableContextMenu(ItemContextMenu):
-    def __init__(self, item: 'Usable'):
-        super().__init__(item)
-        self.add(Button(Locale.get("use"), item.use))
+from game.base.item import BaseItem
+from game.items.usable.menu import UsableContextMenu
 
 
 class Usable(BaseItem):

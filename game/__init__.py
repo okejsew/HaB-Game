@@ -1,11 +1,11 @@
 import curses
 
-from game.base.entities.player import Player
-from game.base.item import BaseItem, ItemContextMenu
-from game.base.items.armor import Armor
-from game.base.items.usable import Usable
-from game.base.items.weapon import Weapon
-from game.localization import Locale
+from game.entities.player import Player
+from game.base.item import BaseItem
+from game.items.armor import Armor
+from game.items.usable import Usable
+from game.items.weapon import Weapon
+from localization import Locale
 from tui import Tui
 
 
@@ -27,7 +27,7 @@ class HaB:
     @staticmethod
     def init():
         from game.interface import Menu
-        Locale.load('ru')
+        Locale.load('en')
         HaB.add_item(BaseItem())
         HaB.add_item(Weapon())
         HaB.add_item(Armor())

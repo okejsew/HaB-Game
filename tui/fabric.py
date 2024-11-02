@@ -3,7 +3,7 @@ import os
 import re
 import sys
 
-from game.localization import Locale
+from localization import Locale
 from tui import Tui, BaseElement
 
 

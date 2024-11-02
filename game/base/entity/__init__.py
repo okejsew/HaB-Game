@@ -1,5 +1,5 @@
 from game.base.item import BaseItem
-from game.entity.health import Health
+from game.base.entity.health import Health
 
 
 class BaseEntity:

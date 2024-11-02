@@ -15,7 +15,7 @@ class Menu:
     def setup():
         Menu.inventory = Tui()
         Menu.item_context = Tui()
-        Menu.main = TuiFabric.load('game/resources/ui/main.tui')
+        Menu.main = TuiFabric.load('resources/ui/main.tui')
         Menu.main.get('btn_exit', Button).click = HaB.exit
         Menu.main.get('btn_inventory', Button).click = lambda: (Menu.main.close(), Menu.open_inventory())
 

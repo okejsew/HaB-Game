@@ -16,5 +16,8 @@
   "armor": "Armor",
   "usable": "Usable",
   "baseitem": "Base item",
-  "baseitem_desc": "Base item (literally nothing). Parent of all other items in game"
+  "baseitem_desc": "Base item (literally nothing). Parent of all other items in game",
+  "weapon_desc": "Base weapon item. Parent of all other weapons in game",
+  "usable_desc": "Parent of all items, which you can use",
+  "armor_desc": "Base armor. Armor like armor"
 }

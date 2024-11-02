@@ -1,4 +1,4 @@
-from game.entity import BaseEntity
+from game.base.entity import BaseEntity
 
 
 class Enemy(BaseEntity):

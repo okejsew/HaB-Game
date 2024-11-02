@@ -1,12 +1,5 @@
-from game.base.item import BaseItem, ItemContextMenu
-from game.localization import Locale
-from tui.elements.button import Button
-
-
-class WeaponContextMenu(ItemContextMenu):
-    def __init__(self, item: 'Weapon'):
-        super().__init__(item)
-        self.add(Button(Locale.get("equip"), item.equip))
+from game.base.item import BaseItem
+from game.items.weapon.menu import WeaponContextMenu
 
 
 class Weapon(BaseItem):
