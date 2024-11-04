@@ -40,7 +40,7 @@ class Tui:
             for i, element in enumerate(self.elements[:y]):
                 color_num = 2 if focusable_elems and element is focusable_elems[self.index] else 1
                 window.addstr(i, 0, str(element), color(color_num))
-
+            window.refresh()
             key = window.getch()
             if key == 259:
                 self.index = max(self.index - 1, 0)

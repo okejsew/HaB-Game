@@ -1,4 +1,4 @@
-from game import HaB, Locale
+from game import Game, Locale
 from game.base.item import ItemContextMenu
 from tui import Tui
 from tui.elements.button import Button, ButtonStyle
@@ -16,15 +16,15 @@ class Menu:
         Menu.inventory = Tui()
         Menu.item_context = Tui()
         Menu.main = TuiFabric.load('resources/ui/main.tui')
-        Menu.main.get('btn_exit', Button).click = HaB.exit
+        Menu.main.get('btn_exit', Button).click = Game.exit
         Menu.main.get('btn_inventory', Button).click = lambda: (Menu.main.close(), Menu.open_inventory())
 
     @staticmethod
     def open_inventory():
         Menu.inventory.elements.clear()
-        Menu.inventory.add(Label(f'{Locale.get("inventory")} {HaB.player.name}:'))
+        Menu.inventory.add(Label(f'{Locale.get("inventory")} {Game.player.name}:'))
 
-        for item in HaB.player.inventory:
+        for item in Game.player.inventory:
             def make_item_handler(item):
                 return lambda: Menu.open_item_context(item.context_menu)
 

@@ -9,7 +9,7 @@ from localization import Locale
 from tui import Tui
 
 
-class HaB:
+class Game:
     player: Player = Player()
 
     @staticmethod
@@ -20,18 +20,18 @@ class HaB:
 
     @staticmethod
     def add_item(item: BaseItem):
-        if item not in HaB.player.inventory:
-            HaB.player.inventory.append(item)
-            item.owner = HaB.player
+        if item not in Game.player.inventory:
+            Game.player.inventory.append(item)
+            item.owner = Game.player
 
     @staticmethod
     def init():
         from game.interface import Menu
         Locale.load('en')
-        HaB.add_item(BaseItem())
-        HaB.add_item(Weapon())
-        HaB.add_item(Armor())
-        HaB.add_item(Usable())
+        Game.add_item(BaseItem())
+        Game.add_item(Weapon())
+        Game.add_item(Armor())
+        Game.add_item(Usable())
         Menu.setup()
 
     @staticmethod
