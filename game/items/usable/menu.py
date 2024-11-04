@@ -2,7 +2,7 @@ from typing import TYPE_CHECKING
 
 from game.base.item import ItemContextMenu
 from localization import Locale
-from tui.elements.button import Button
+from utils.tui.elements.button import Button
 
 if TYPE_CHECKING:
     from game.items.usable import Usable

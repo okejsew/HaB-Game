@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import Optional, Callable
 
-from tui import BaseElement
+from utils.tui import BaseElement
 
 
 class ButtonStyle(Enum):

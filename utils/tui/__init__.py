@@ -1,7 +1,7 @@
 from typing import TypeVar, Type, Optional, Callable
 
-from tui.console import window, color
-from tui.element import BaseElement
+from utils.tui.console import window, color
+from utils.tui.element import BaseElement
 
 tuis: list['Tui'] = []
 T = TypeVar('T')

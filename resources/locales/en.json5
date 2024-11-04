@@ -1,0 +1,27 @@
+{
+  'btn_play': 'Play',
+  'btn_profile': 'Profile',
+  'btn_equipment': 'Equipment',
+  'btn_inventory': 'Inventory',
+  'btn_settings': 'Settings',
+  'btn_exit': 'Exit',
+  
+  'inventory': 'Inventory of player',
+  'back': 'Back',
+  'use': 'Use',
+  'put_on': 'Put on',
+  'equip': 'Equip',
+  'description': 'Description',
+
+  'weapon': 'Weapon',
+  'armor': 'Armor',
+  'usable': 'Usable',
+  'baseitem': 'Base item',
+
+  'baseitem_desc': 'A basic object (literally nothing). The parent of all other items in the game',
+  'weapon_desc': 'The basic item of the weapon. The parent of all weapons in the game',
+  'usable_desc': 'The parent of all items that can be used',
+  'armor_desc': 'Basic armor. Armor as armor',
+
+  'test_phrase': 'This is test phrase'
+}

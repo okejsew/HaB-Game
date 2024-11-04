@@ -1,4 +1,4 @@
-import json
+import json5
 
 
 class Locale:
@@ -6,8 +6,8 @@ class Locale:
 
     @staticmethod
     def load(lang: str):
-        with open(f'resources/locales/{lang}.json', 'r', encoding='utf-8') as file:
-            Locale.current_locale = json.load(file)
+        with open(f'resources/locales/{lang}.json5', 'r', encoding='utf-8') as file:
+            Locale.current_locale = json5.load(file)
 
     @staticmethod
     def get(code: str):

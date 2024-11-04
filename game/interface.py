@@ -1,9 +1,9 @@
 from game import Game, Locale
 from game.base.item import ItemContextMenu
-from tui import Tui
-from tui.elements.button import Button, ButtonStyle
-from tui.elements.label import Label
-from tui.fabric import TuiFabric
+from utils.tui import Tui
+from utils.tui.elements.button import Button, ButtonStyle
+from utils.tui.elements.label import Label
+from utils.tui.fabric import TuiFabric
 
 
 class Menu:

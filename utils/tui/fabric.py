@@ -4,7 +4,7 @@ import re
 import sys
 
 from localization import Locale
-from tui import Tui, BaseElement
+from utils.tui import Tui, BaseElement
 
 
 class TuiFabric:

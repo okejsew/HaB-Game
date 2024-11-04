@@ -1,4 +1,5 @@
 import curses
+import random
 
 from game.entities.player import Player
 from game.base.item import BaseItem
@@ -6,7 +7,8 @@ from game.items.armor import Armor
 from game.items.usable import Usable
 from game.items.weapon import Weapon
 from localization import Locale
-from tui import Tui
+from utils.dialog import DialogFabric
+from utils.tui import Tui
 
 
 class Game:
@@ -37,4 +39,5 @@ class Game:
     @staticmethod
     def start():
         from game.interface import Menu
+        DialogFabric.load(f'greeting{random.randint(2, 4)}').start()
         Menu.main.show()

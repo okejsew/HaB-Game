@@ -1,4 +1,4 @@
-from tui import BaseElement
+from utils.tui import BaseElement
 
 
 class Label(BaseElement):

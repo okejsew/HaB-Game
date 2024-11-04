@@ -1,8 +1,8 @@
 from typing import TYPE_CHECKING
 from localization import Locale
-from tui import BaseElement
-from tui.elements.label import Label
-from tui.elements.splitter import Splitter
+from utils.tui import BaseElement
+from utils.tui.elements.label import Label
+from utils.tui.elements.splitter import Splitter
 
 if TYPE_CHECKING:
     from game.base.item import BaseItem
