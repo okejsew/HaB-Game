@@ -1,5 +1,8 @@
+import random
+
 from game import Game, Locale
 from game.base.item import ItemContextMenu
+from utils.dialog import Dialog
 from utils.tui import Tui
 from utils.tui.elements.button import Button, ButtonStyle
 from utils.tui.elements.label import Label
@@ -40,3 +43,9 @@ class Menu:
         Menu.item_context.elements += icm.elements
         Menu.item_context.add(Button(Locale.get('back'), lambda: Menu.item_context.next(Menu.open_inventory)))
         Menu.item_context.show()
+
+    @staticmethod
+    def greeting():
+        d = Dialog()
+        d.phrases.append(Locale.get(f'greeting{random.randint(1, 10)}'))
+        d.show()

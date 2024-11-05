@@ -7,7 +7,7 @@ from game.items.armor import Armor
 from game.items.usable import Usable
 from game.items.weapon import Weapon
 from localization import Locale
-from utils.dialog import DialogFabric
+from utils.dialog import Dialog
 from utils.tui import Tui
 
 
@@ -29,7 +29,7 @@ class Game:
     @staticmethod
     def init():
         from game.interface import Menu
-        Locale.load('en')
+        Locale.load('ru')
         Game.add_item(BaseItem())
         Game.add_item(Weapon())
         Game.add_item(Armor())
@@ -39,5 +39,6 @@ class Game:
     @staticmethod
     def start():
         from game.interface import Menu
-        DialogFabric.load(f'greeting{random.randint(2, 4)}').start()
+        Game.init()
+        Menu.greeting()
         Menu.main.show()
