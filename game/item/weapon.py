@@ -1,4 +1,4 @@
-from game.base.item import BaseItem
+from game.item import BaseItem
 
 
 class Weapon(BaseItem):

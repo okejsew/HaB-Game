@@ -1,7 +1,5 @@
 from enum import Enum
 
-from locale import Locale
-
 
 class Rarity(Enum):
     Common = 1
@@ -17,9 +15,3 @@ class BaseItem:
     def __init__(self):
         self.name: str = 'baseitem'
         self.rarity: Rarity = Rarity.Godlike
-
-    def get_name(self) -> str:
-        return Locale.get(self.name)
-
-    def get_description(self) -> str:
-        return Locale.get(self.name + '_desc')
