@@ -4,7 +4,7 @@ from game.base.item import BaseItem
 class Weapon(BaseItem):
     def __init__(self):
         super().__init__()
-        self.name = 'weapon'
+        self.name = 'Оружие'
 
         self.durability: int = 0
         self.max_durability: int = 100

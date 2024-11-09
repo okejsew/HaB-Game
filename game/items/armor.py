@@ -14,7 +14,7 @@ class ArmorType(Enum):
 class Armor(BaseItem):
     def __init__(self):
         super().__init__()
-        self.name = 'armor'
+        self.name = 'Броня'
 
         self.type: ArmorType = ArmorType.head
         self.durability: int = 0

@@ -1,6 +1,6 @@
 from enum import Enum
 
-from localization import Locale
+from locale import Locale
 
 
 class Rarity(Enum):

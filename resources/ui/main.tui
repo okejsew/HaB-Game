@@ -5,26 +5,26 @@ Splitter:
 
 Button:
     name = 'btn_play'
-    text = '@btn_play'
+    text = 'Играть'
 
 Button:
     name = 'btn_profile'
-    text = '@btn_profile'
+    text = 'Профиль'
 
 Button:
     name = 'btn_equipment'
-    text = '@btn_equipment'
+    text = 'Снаряжение'
 
 Button:
     name = 'btn_inventory'
-    text = '@btn_inventory'
+    text = 'Инвентарь'
 
 Button:
     name = 'btn_settings'
-    text = '@btn_settings'
+    text = 'Настройки'
 
 Splitter:
 
 Button:
     name = 'btn_exit'
-    text = '@btn_exit'
+    text = 'Выход'

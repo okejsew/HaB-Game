@@ -4,7 +4,7 @@ from game.base.item import BaseItem
 class Usable(BaseItem):
     def __init__(self):
         super().__init__()
-        self.name = 'usable'
+        self.name = 'Используемое'
 
         self.usages: int = 0
         self.max_usages: int = 100
