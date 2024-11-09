@@ -22,15 +22,4 @@
   'weapon_desc': 'The basic item of the weapon. The parent of all weapons in the game',
   'usable_desc': 'The parent of all items that can be used',
   'armor_desc': 'Basic armor. Armor as armor',
-
-  'greeting1': 'Welcome back!',
-  'greeting2': 'Welcome back to Hit & Beat!',
-  'greeting3': 'Greetings! Enjoy your game!',
-  'greeting4': 'Great to see you again!',
-  'greeting5': 'Enjoy your return!',
-  'greeting6': 'Have a great time!',
-  'greeting7': 'Ready for new victories?',
-  'greeting8': 'Let’s go for new achievements!',
-  'greeting9': 'All set to play, good luck!',
-  'greeting10': 'Back with us? Fantastic!'
 }

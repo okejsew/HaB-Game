@@ -15,3 +15,5 @@ class Locale:
             return Locale.current_locale[code]
         except KeyError:
             return 'Locale Not Found'
+
+Locale.load('ru')
