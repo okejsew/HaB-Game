@@ -1,5 +1,5 @@
-from game.manager import SingletonManager
+from game.manager import singleton
 
-
-class BattleManager(SingletonManager):
+@singleton
+class BattleManager:
     pass

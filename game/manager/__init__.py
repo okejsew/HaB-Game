@@ -1,12 +1,13 @@
-class SingletonManager:
-    _instance = None
-    _initialized: bool = False
+class _SingletonWrapper:
+    def __init__(self, cls):
+        self.__wrapped__ = cls
+        self._instance = None
 
-    def __new__(cls, *args, **kwargs):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-        return cls._instance
+    def __call__(self, *args, **kwargs):
+        if self._instance is None:
+            self._instance = self.__wrapped__(*args, **kwargs)
+        return self._instance
 
-    def __init__(self):
-        if not hasattr(self, '_initialized') or not self._initialized:
-            self._initialized = True
+def singleton(cls):
+    return _SingletonWrapper(cls)
+
