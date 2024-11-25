@@ -12,11 +12,11 @@ class Game:
         self.battle = BattleManager(self)
 
     def attack(self):
-        self.player.equipment.right_hand.attack(self.player, self.player, BodyPart.chest)
+        self.player.attack(self.player, BodyPart.chest)
 
     def start(self):
-        self.player.equipment.chest = Armor()
-        self.player.equipment.right_hand = Weapon()
+        self.player.equip(Armor())
+        self.player.equip(Weapon())
         self.player.equipment.chest.factor = 10
         self.attack()
         print(self.player)

@@ -22,18 +22,26 @@ class Armor(BattleItem):
     def __init__(self):
         super().__init__()
         self.name = 'Броня'
-        self.type = BodyPart.head
+        self.type = BodyPart.chest
 
     def on_attack(self, who: 'BaseEntity', whom: 'BaseEntity', bodypart: 'BodyPart', weapon: 'Weapon', damage: int):
+        # diff = Разница между фактором защиты и фактором атаки
         difference = abs(self.factor - weapon.factor)
-        if weapon.factor > self.factor:  # Если класс у оружия больше
-            self.change(-(1 + difference * 2 + damage // 50))
-            who.health.change(1, BodyPart.head)
-        elif weapon.factor < self.factor:  # Если класс у брони больше
-            self.change(-randint(0, 1))
-        else:  # Если класс брони такой же, как и у оружия
-            self.change(-(1 + damage // 100))
 
+        if weapon.factor > self.factor:
+            # Урон броне = (diff * 2) + 1 + 2% урона
+            self.change(-(1 + difference * 2 + percent(damage, 2)))
+            who.health.change(1, BodyPart.head)
+
+        elif weapon.factor < self.factor:
+            # Урон броне = 1 или 0 (хз лол)
+            self.change(-randint(0, 1))
+
+        else:
+            # Урон броне = 1 + 1% урона
+            self.change(-(1 + percent(damage, 1)))
+
+        # Дополнительно наносимый урон (cuz конечности связяны)
         match bodypart:
             case BodyPart.head:
                 whom.health.change(-percent(damage, 35), BodyPart.chest)

@@ -17,16 +17,26 @@ class Weapon(BattleItem):
     def attack(self, who: 'BaseEntity', whom: 'BaseEntity', bodypart: 'BodyPart'):
         armor = whom.equipment.get(bodypart)
         if not armor or armor.durability == 0:
+            # Если брони нет, или она сломана
+            # Урон = урон оружия * 2
             whom.health.change(-self.damage * 2, bodypart)
             return
+
+        # diff = Разница между фактором брони и фактором оружия
         difference = abs(self.factor - armor.factor)
-        if armor.factor > self.factor:  # Если класс у брони больше
+
+        # Урон = урон оружия / (diff + 1)
+        if armor.factor > self.factor:
             damage = round(self.damage / (difference + 1))
+            # Урон оружию = 1 + diff * 2
             self.change(-(1 + difference * 2))
-        elif armor.factor < self.factor:  # Если класс у оружия больше
+
+        # Урон = урон оружия + (урон оружия * 2 / diff)
+        elif armor.factor < self.factor:
             damage = round(self.damage + self.damage / 2 * difference)
             self.change(-randint(0, 1))
-        else:  # Если класс брони такой же, как и у оружия
+
+        else:  # Урон = урон оружия
             damage = self.damage
             self.change(-1)
         whom.health.change(-damage, bodypart)

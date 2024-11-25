@@ -1,12 +1,16 @@
-from typing import Optional
+from typing import Optional, TYPE_CHECKING
 
+if TYPE_CHECKING:
+    from game.entity import BaseEntity
+from game.item import BaseItem
 from game.item.armor import Armor, BodyPart
 from game.item.usable import Usable
 from game.item.weapon import Weapon
 
 
 class Equipment:
-    def __init__(self):
+    def __init__(self, owner: 'BaseEntity'):
+        self.owner = owner
         self.head: Optional[Armor] = None
         self.hands: Optional[Armor] = None
         self.chest: Optional[Armor] = None
