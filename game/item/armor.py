@@ -27,12 +27,12 @@ class Armor(BattleItem):
     def on_attack(self, who: 'BaseEntity', whom: 'BaseEntity', bodypart: 'BodyPart', weapon: 'Weapon', damage: int):
         difference = abs(self.factor - weapon.factor)
         if weapon.factor > self.factor:  # Если класс у оружия больше
-            self.durability -= (1 + difference * 2 + damage // 50)
+            self.change(-(1 + difference * 2 + damage // 50))
             who.health.change(1, BodyPart.head)
         elif weapon.factor < self.factor:  # Если класс у брони больше
-            self.durability -= randint(0, 1)
+            self.change(-randint(0, 1))
         else:  # Если класс брони такой же, как и у оружия
-            self.durability -= 1 + damage // 100
+            self.change(-(1 + damage // 100))
 
         match bodypart:
             case BodyPart.head:

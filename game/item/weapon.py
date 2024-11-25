@@ -22,13 +22,13 @@ class Weapon(BattleItem):
         difference = abs(self.factor - armor.factor)
         if armor.factor > self.factor:  # Если класс у брони больше
             damage = round(self.damage / (difference + 1))
-            self.durability -= (1 + difference * 2)
+            self.change(-(1 + difference * 2))
         elif armor.factor < self.factor:  # Если класс у оружия больше
             damage = round(self.damage + self.damage / 2 * difference)
-            self.durability -= randint(0, 1)
+            self.change(-randint(0, 1))
         else:  # Если класс брони такой же, как и у оружия
             damage = self.damage
-            self.durability -= 1
+            self.change(-1)
         whom.health.change(-damage, bodypart)
         armor.on_attack(who, whom, bodypart, self, damage)
 

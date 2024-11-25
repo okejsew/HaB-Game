@@ -8,3 +8,6 @@ class BattleItem(BaseItem):
         self.durability = 50
         self.max_durability = 50
         self.factor = 1
+
+    def change(self, durability: int):
+        self.durability = min(max(0, self.durability + durability), self.max_durability)

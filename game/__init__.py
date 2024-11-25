@@ -17,8 +17,6 @@ class Game:
     def start(self):
         self.player.equipment.chest = Armor()
         self.player.equipment.right_hand = Weapon()
-        self.player.equipment.right_hand.factor = 10
-        self.attack()
-        self.attack()
+        self.player.equipment.chest.factor = 10
         self.attack()
         print(self.player)
