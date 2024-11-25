@@ -1,3 +1,3 @@
-from game.manager.ui import UIManager
+from game import Game
 
-UIManager().start()
+Game().start()

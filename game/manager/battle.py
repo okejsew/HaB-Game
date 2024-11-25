@@ -1,5 +1,8 @@
-from game.manager import singleton
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from game import Game
 
-@singleton
+
 class BattleManager:
-    pass
+    def __init__(self, game: 'Game'):
+        self.game = game

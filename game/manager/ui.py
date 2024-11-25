@@ -1,12 +1,10 @@
-from tui.fabric import TuiFabric
-from tui import Tui
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from game import Game
 
-from game.manager import singleton
-
-@singleton
 class UIManager:
-    def __init__(self):
-        self.menu_main: Tui = TuiFabric.load('resources/ui/main.tui')
+    def __init__(self, game: 'Game'):
+        self.game = game
 
     def start(self):
-        self.menu_main.show()
+        pass
