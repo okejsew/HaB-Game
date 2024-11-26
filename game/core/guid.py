@@ -8,7 +8,7 @@ T = TypeVar('T')
 
 class GUID:
     id: int = 0
-    objects: dict['GUID', 'Object']
+    objects: dict['GUID', 'Object'] = {}
 
     @staticmethod
     def get_new() -> int:
@@ -23,8 +23,16 @@ class GUID:
     def __init__(self):
         self.id = self.get_new()
 
+    @staticmethod
+    def info():
+        for obj in GUID.objects.values():
+            print(obj)
+
     def __hash__(self):
         return hash(self.id)
+
+    def __eq__(self, other: 'GUID'):
+        return self.id == other.id
 
     def __repr__(self):
         return f'GUID={self.id}'

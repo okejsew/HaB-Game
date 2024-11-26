@@ -13,7 +13,7 @@ class Armor(Wearable):
         self.bodypart: BodyPart = BodyPart.chest
 
     def __repr__(self):
-        return super().__repr__() + f'[BODYPART={self.bodypart}]'
+        return super().__repr__() + f'[BP={self.bodypart.name}]'
 
     def on_attack(self, who: 'Entity', damage):
         pass

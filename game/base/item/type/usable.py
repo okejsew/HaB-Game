@@ -7,5 +7,8 @@ class Usable(Item):
         self.usages: int = 10
         self.max_usages: int = 10
 
+    def on_usage(self):
+        pass
+
     def __repr__(self):
         return super().__repr__() + f'[{self.usages}/{self.max_usages}]'

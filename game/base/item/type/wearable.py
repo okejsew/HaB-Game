@@ -15,4 +15,4 @@ class Wearable(Item):
         self.durability = max(0, self.durability - amount)
 
     def __repr__(self):
-        return super().__repr__() + f'[{self.durability}/{self.max_durability}][CLASS={self.cls}]'
+        return super().__repr__() + f'[{self.durability}/{self.max_durability}][CLS={self.cls}]'

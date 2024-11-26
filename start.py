@@ -1,19 +1,21 @@
-from game.base.entity import Entity
-from game.base.item import Armor, Weapon, BodyPart
-from game.manager.battle import BattleManager
-from game.manager.entity import EntityManager
-from game.manager.item import ItemManager
+from traceback import print_exception
 
-ply = Entity()
-armor = Armor()
-weapon = Weapon()
+from game import *
 
-EntityManager.register(ply)
-ItemManager.register(armor)
-ItemManager.register(weapon)
 
-ply.equip_item(armor)
-ply.equip_item(weapon)
+try:
+    ply = Entity('Player')
+    w = Weapon('Деревянный меч')
+    a = Armor('Деревянная броня')
+    u = Usable('Ягоды')
 
-BattleManager.attack(ply, ply, BodyPart.chest)
-print(ply)
+    ply.equip(w)
+    ply.equip(a)
+    ply.equip(u)
+
+    BattleManager.attack(ply, ply, BodyPart.chest)
+    print(ply)
+    input()
+except Exception as ex:
+    print_exception(ex)
+    input()

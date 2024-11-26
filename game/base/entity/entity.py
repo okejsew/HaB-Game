@@ -21,13 +21,14 @@ class Entity(Object):
             item.owner = self
 
     def equip(self, item: 'Item'):
+        item.owner = self
         if item in self.inventory:
             self.inventory.remove(item)
         self.equipment.equip(item, self.add)
 
     def __repr__(self):
         string = super().__repr__()
-        string += '\n\nСнаряжение:\n' + repr(self.equipment)
-        string += f'\nИнвентарь: {self.inventory}\n'
-        string += f'\nЗдоровье:\n' + repr(self.health)
+        string += '\n\n  Снаряжение:\n' + repr(self.equipment)
+        string += f'\n  Инвентарь: {self.inventory}\n'
+        string += f'\n  Здоровье:\n' + repr(self.health)
         return string

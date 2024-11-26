@@ -1,35 +1,36 @@
 from dataclasses import dataclass
 
 from game.core.bodypart import BodyPart
+from game.core.settings import Settings
 
 
 @dataclass
 class Health:
-    head = 40
-    chest = 50
-    hands = 30
-    legs = 40
-    feet = 25
+    head: int = 40
+    chest: int = 50
+    hands: int = 30
+    legs: int = 40
+    feet: int = 25
 
-    head_max = 40
-    chest_max = 50
-    hands_max = 30
-    legs_max = 40
-    feet_max = 25
+    head_max: int = 40
+    chest_max: int = 50
+    hands_max: int = 30
+    legs_max: int = 40
+    feet_max: int = 25
 
     def damage(self, amount: int, bodypart: BodyPart):
         new_hp = max(0, getattr(self, bodypart.name) - amount)
-        setattr(self, bodypart.name, new_hp)
+        setattr(self, bodypart.name, int(new_hp))
 
     def heal(self, amount: int, bodypart: BodyPart):
         max_hp = getattr(self, bodypart.name + '_max')
         new_hp = min(max_hp, getattr(self, bodypart.name) + amount)
-        setattr(self, bodypart.name, new_hp)
+        setattr(self, bodypart.name, int(new_hp))
 
     def __repr__(self):
-        string = f'    Голова: {self.head}/{self.head_max}\n'
-        string += f'    Живот: {self.chest}/{self.chest_max}\n'
-        string += f'    Руки: {self.hands}/{self.hands_max}\n'
-        string += f'    Ноги: {self.legs}/{self.legs_max}\n'
-        string += f'    Ступни: {self.feet}/{self.feet_max}\n'
+        string = ''
+        for bodypart, health in self.__dict__.items():
+            if '_max' not in bodypart:
+                string += f'    {getattr(BodyPart, bodypart).value}: '.ljust(Settings.ljust_health)
+                string += f'{health}/{getattr(self, bodypart + "_max")}\n'
         return string
