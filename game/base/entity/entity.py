@@ -1,23 +1,33 @@
-from game.base.entity.health import Health
+from typing import TYPE_CHECKING
+
 from game.base.entity.equip import Equipment
-from game.base.item import Item, BodyPart
+from game.base.entity.health import Health
 from game.core.object import Object
+
+if TYPE_CHECKING:
+    from game.base.item import Item
 
 
 class Entity(Object):
     def __init__(self, name: str = 'Entity'):
         super().__init__(name)
-        self.health = Health()
-        self.equipment = Equipment()
-        self.inventory: list[Item] = []
+        self.inventory: list['Item'] = []
+        self.equipment: Equipment = Equipment()
+        self.health: Health = Health()
 
-    def add_item(self, item: Item):
+    def add(self, item: 'Item'):
         if item not in self.inventory:
             self.inventory.append(item)
-            item.owner_id = self.id
+            item.owner = self
 
-    def equip_item(self, item: Item):
-        item.owner_id = self.id
+    def equip(self, item: 'Item'):
         if item in self.inventory:
             self.inventory.remove(item)
-        self.equipment.equip(item, self.inventory)
+        self.equipment.equip(item, self.add)
+
+    def __repr__(self):
+        string = super().__repr__()
+        string += '\n\nСнаряжение:\n' + repr(self.equipment)
+        string += f'\nИнвентарь: {self.inventory}\n'
+        string += f'\nЗдоровье:\n' + repr(self.health)
+        return string

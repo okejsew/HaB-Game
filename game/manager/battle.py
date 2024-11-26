@@ -1,12 +1,10 @@
 from game.base.entity import Entity
-from game.base.item import BodyPart
+from game.core.bodypart import BodyPart
 
 
 class BattleManager:
     @staticmethod
     def attack(who: Entity, whom: Entity, bodypart: BodyPart):
-        if weapon := who.equipment.right_hand:
-            damage = weapon.attack(whom.id, bodypart)
-            if not damage: return
-            if armor := whom.equipment.get(bodypart):
-                armor.on_attack(who.id, bodypart, damage)
+        weapon = who.equipment.right_hand
+        armor = whom.equipment.get(bodypart)
+        armor.on_attack(who, weapon.attack(whom, bodypart))

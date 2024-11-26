@@ -1,16 +1,19 @@
-from uuid import UUID
+from typing import TYPE_CHECKING
 
-from game.base.item.bodypart import BodyPart
-from game.base.item.item import Wearable
+from game.base.item.type.wearable import Wearable
+from game.core.bodypart import BodyPart
 
+if TYPE_CHECKING:
+    from game.base.entity import Entity
 
 
 class Armor(Wearable):
-    def __init__(self):
-        super().__init__()
-        self.type = BodyPart.chest
+    def __init__(self, name: str = 'Armor'):
+        super().__init__(name)
+        self.bodypart: BodyPart = BodyPart.chest
 
-    def on_attack(self, who: UUID, bodypart: BodyPart, damage: int):
-        from game.manager.entity import EntityManager
-        who = EntityManager.get(who)
-        who.health.heal(damage + self.durability, bodypart)
+    def __repr__(self):
+        return super().__repr__() + f'[BODYPART={self.bodypart}]'
+
+    def on_attack(self, who: 'Entity', damage):
+        pass
