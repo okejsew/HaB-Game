@@ -9,9 +9,3 @@ class Rarity(Enum):
     Legendary = 5
     Mystical = 6
     Godlike = 7
-
-
-class BaseItem:
-    def __init__(self):
-        self.name: str = 'baseitem'
-        self.rarity: Rarity = Rarity.Godlike
