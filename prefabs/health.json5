@@ -1,0 +1,13 @@
+{
+  'head': 100,
+  'chest': 100,
+  'stomach': 100,
+  'hands': 100,
+  'legs': 100,
+
+  'head_max': 100,
+  'chest_max': 100,
+  'stomach_max': 100,
+  'hands_max': 100,
+  'legs_max': 100
+}
