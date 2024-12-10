@@ -1,21 +1,21 @@
 from traceback import print_exception
 
-from game import *
-
+from game.base.entity import Entity
+from game.items.armor import Armor
+from game.items.weapon import Weapon
 
 try:
+    w = Weapon()
+    a = Armor()
     ply = Entity('Player')
-    w = Weapon('Деревянный меч')
-    a = Armor('Деревянная броня')
-    u = Usable('Ягоды')
-
     ply.equip(w)
     ply.equip(a)
-    ply.equip(u)
 
-    BattleManager.attack(ply, ply, BodyPart.chest)
+    ply.attack(ply)
+    print(w)
+    print(a)
     print(ply)
-    input()
+
+
 except Exception as ex:
     print_exception(ex)
-    input()
